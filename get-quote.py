@@ -1,5 +1,4 @@
 import random
-import sys
 
 def main():
 
@@ -8,7 +7,8 @@ def main():
   f.close()
   
   f = open("quotes.txt", "a")
-  f.write('\n The best is yet to be. ')
+  quote = input("enter a quote: ")
+  f.write('\n' + quote)
   f.close()
   
   first = 1
@@ -16,8 +16,8 @@ def main():
   rnd = random.randint(1, last)
   rnd2 = random.randint(1, first)
   
-  sys.stdout.write(quotes[rnd2])
-  sys.stdout.write(quotes[rnd])
+  print(quotes[rnd2], end='')
+  print(quotes[rnd], end='')
   
 if __name__== "__main__":
   main()
