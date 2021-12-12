@@ -2,19 +2,24 @@ import random
 
 def main():
 
+  print('enter a quote. ')      
+        
   f = open("quotes.txt")
   quotes = f.readlines()
   f.close()
+
+  try:
+      quote = input()
+  except KeyboardInterrupt:
+      print('CTRL+C exception. Please run again and input a quote!')
+  else:
+      f = open("quotes.txt", "a")
+      f.write('\n' + quote)
+      f.close()
   
-  f = open("quotes.txt", "a")
-  quote = input("enter a quote: ")
-  f.write('\n' + quote)
-  f.close()
-  
-  first = 1
-  last = 19
+  last = 20
   rnd = random.randint(1, last)
-  rnd2 = random.randint(1, first)
+  rnd2 = random.randint(1, last)
   
   print(quotes[rnd2], end='')
   print(quotes[rnd], end='')
