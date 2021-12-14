@@ -17,7 +17,7 @@ def main():
       f.write('\n' + quote)
       f.close()
   
-  last = 20
+  last = random.randint(1, 999)
   rnd = random.randint(1, last)
   rnd2 = random.randint(1, last)
   
